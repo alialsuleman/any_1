@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 
 import jwt from "jsonwebtoken";
-import { JWT_SECRET } from "../../env";
+import { JWT_SECRET } from "../env";
 import User from "../models/User";
 
 export const verify = async (req: Request, res: Response, next: NextFunction) => {

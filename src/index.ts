@@ -16,9 +16,10 @@ import reportRoutes from './routes/report.route'
 import adminUserRoutes from './routes/admin.user.route'
 
 import cors from 'cors';
-import { MONGO_URI } from '../env'
+import { MONGO_URI } from './env'
 import User from './models/User';
 
+//asdasd
 const app = express()
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

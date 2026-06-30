@@ -2,7 +2,7 @@ import { Response, Request } from "express";
 import User, { IUser } from "../models/User";
 import bcrypt from 'bcryptjs'
 import jwt from "jsonwebtoken";
-import { JWT_LIFETIME, JWT_SECRET } from "../../env";
+import { JWT_LIFETIME, JWT_SECRET } from "../env";
 import { asyncWrapper } from "../middleware/asyncWrapper";
 import path from "path";
 
