@@ -7,7 +7,7 @@ import { Types } from 'mongoose';
 // إضافة سيارة للمفضلة
 export const addFavorite = async (req: Request, res: Response) => {
     try {
-        const userId = req.userId; // من middleware verify
+        const userId = res.locals.userId;
         const { carId } = req.body;
 
         if (!carId) {
@@ -66,7 +66,7 @@ export const addFavorite = async (req: Request, res: Response) => {
 // حذف سيارة من المفضلة
 export const removeFavorite = async (req: Request, res: Response) => {
     try {
-        const userId = req.userId;
+        const userId = res.locals.userId;
         const { carId } = req.params;
 
         const favorite = await Favorite.findOneAndDelete({
@@ -97,7 +97,7 @@ export const removeFavorite = async (req: Request, res: Response) => {
 // الحصول على قائمة المفضلة للمستخدم
 export const getFavorites = async (req: Request, res: Response) => {
     try {
-        const userId = req.userId;
+        const userId = res.locals.userId;
         const { purpose } = req.query; // فلتر حسب purpose (rent أو sale)
 
         // بناء استعلام الفلتر
@@ -157,7 +157,7 @@ export const getFavorites = async (req: Request, res: Response) => {
 // التحقق إذا كانت السيارة في المفضلة
 export const checkFavorite = async (req: Request, res: Response) => {
     try {
-        const userId = req.userId;
+        const userId = res.locals.userId;
         const { carId } = req.params;
 
         const favorite = await Favorite.findOne({
