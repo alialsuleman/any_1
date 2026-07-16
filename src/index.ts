@@ -14,6 +14,7 @@ import rentalRoutes from './routes/rental.route'
 import buyRoters from './routes/buy.route'
 import reportRoutes from './routes/report.route'
 import adminUserRoutes from './routes/admin.user.route'
+import favoriteRoutes from './routes/favorite.routes';
 
 import cors from 'cors';
 import { MONGO_URI } from './env'
@@ -39,6 +40,8 @@ app.use('/api/rental', rentalRoutes)
 app.use('/api/buy', buyRoters)
 app.use('/api/reports', reportRoutes)
 app.use('/api/admin', adminUserRoutes)
+app.use('/api/favorites', favoriteRoutes);
+
 
 app.use(notFound)
 app.use(errorHandlerMiddleware)
