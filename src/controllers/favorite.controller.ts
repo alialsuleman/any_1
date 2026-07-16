@@ -1,7 +1,7 @@
 // controllers/favorite.controller.ts
 import { Request, Response } from 'express';
-import Favorite from '../models/favorite.model';
-import Car from '../models/car.model';
+import Favorite from '../models/Favorite';
+import Car from '../models/Car';
 import { Types } from 'mongoose';
 
 // إضافة سيارة للمفضلة
